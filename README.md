@@ -98,6 +98,7 @@ Return the least number of moves required to reach square N*N.  If it is not pos
 Example 1:
 
 Input: [
+
 [-1,-1,-1,-1,-1,-1],
 
 [-1,-1,-1,-1,-1,-1],
