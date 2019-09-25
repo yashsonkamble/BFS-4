@@ -1,30 +1,6 @@
 # BFS-4
 
-## Problem1 : Employee importance (https://leetcode.com/problems/employee-importance/)
-
-You are given a data structure of employee information, which includes the employee's unique id, his importance value and his direct subordinates' id.
-
-For example, employee 1 is the leader of employee 2, and employee 2 is the leader of employee 3. They have importance value 15, 10 and 5, respectively. Then employee 1 has a data structure like [1, 15, [2]], and employee 2 has [2, 10, [3]], and employee 3 has [3, 5, []]. Note that although employee 3 is also a subordinate of employee 1, the relationship is not direct.
-
-Now given the employee information of a company, and an employee id, you need to return the total importance value of this employee and all his subordinates.
-
-Example 1:
-
-Input: [[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1
-
-Output: 11
-
-Explanation:
-Employee 1 has importance value 5, and he has two direct subordinates: employee 2 and employee 3. They both have importance value 3. So the total importance value of employee 1 is 5 + 3 + 3 = 11.
- 
-
-Note:
-
-One employee has at most one direct leader and may have several subordinates.
-
-The maximum number of employees won't exceed 2000.
-
-## Problem2: Minesweeper (https://leetcode.com/problems/minesweeper/)
+## Problem1: Minesweeper (https://leetcode.com/problems/minesweeper/)
 
 Let's play the minesweeper game (Wikipedia, online game)!
 
@@ -98,3 +74,61 @@ The input board won't be a stage when game is over (some mines have been reveale
 For simplicity, not mentioned rules should be ignored in this problem. For example, you don't need to reveal all the unrevealed mines 
 
 when the game is over, consider any cases that you will win the game or flag any squares.
+
+## Problem 2 Snakes and ladders (https://leetcode.com/problems/snakes-and-ladders/)
+
+On an N x N board, the numbers from 1 to N*N are written boustrophedonically starting from the bottom left of the board, and alternating direction each row.  For example, for a 6 x 6 board, the numbers are written as follows:
+
+
+You start on square 1 of the board (which is always in the last row and first column).  Each move, starting from square x, consists of the following:
+
+You choose a destination square S with number x+1, x+2, x+3, x+4, x+5, or x+6, provided this number is <= N*N.
+(This choice simulates the result of a standard 6-sided die roll: ie., there are always at most 6 destinations, regardless of the size of the board.)
+
+If S has a snake or ladder, you move to the destination of that snake or ladder.  Otherwise, you move to S.
+A board square on row r and column c has a "snake or ladder" if board[r][c] != -1.  The destination of that snake or ladder is board[r][c].
+
+Note that you only take a snake or ladder at most once per move: if the destination to a snake or ladder is the start of another snake or ladder, you do not continue moving.  (For example, if the board is `[[4,-1],[-1,3]]`, and on the first move your destination square is `2`, then you finish your first move at `3`, because you do not continue moving to `4`.)
+
+Return the least number of moves required to reach square N*N.  If it is not possible, return -1.
+
+Example 1:
+
+Input: [
+[-1,-1,-1,-1,-1,-1],
+
+[-1,-1,-1,-1,-1,-1],
+
+[-1,-1,-1,-1,-1,-1],
+
+[-1,35,-1,-1,13,-1],
+
+[-1,-1,-1,-1,-1,-1],
+
+[-1,15,-1,-1,-1,-1]]
+
+Output: 4
+
+Explanation: 
+
+At the beginning, you start at square 1 [at row 5, column 0].
+
+You decide to move to square 2, and must take the ladder to square 15.
+
+You then decide to move to square 17 (row 3, column 5), and must take the snake to square 13.
+
+You then decide to move to square 14, and must take the ladder to square 35.
+
+You then decide to move to square 36, ending the game.
+
+It can be shown that you need at least 4 moves to reach the N*N-th square, so the answer is 4.
+
+Note:
+
+2 <= board.length = board[0].length <= 20
+
+board[i][j] is between 1 and N*N or is equal to -1.
+
+The board square with number 1 has no snake or ladder.
+
+The board square with number N*N has no snake or ladder.
